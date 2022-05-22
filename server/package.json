@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "longpolling:server": "nodemon longpolling.js",
+    "longpolling:client": "npm run start --prefix ../client",
+    "longpolling:dev": "concurrently \"npm run longpolling:server\" \"npm run longpolling:client\"",
+
+    "eventsource:server": "nodemon eventsource.js",
+    "eventsource:client": "npm run start --prefix ../client",
+    "eventsource:dev": "concurrently \"npm run eventsource:server\" \"npm run eventsource:client\"",
+
+    "websocket:server": "nodemon websocket.js",
+    "websocket:client": "npm run start --prefix ../client",
+    "websocket:dev": "concurrently \"npm run websocket:server\" \"npm run websocket:client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16",
+    "ws": "^8.6.0"
+  }
+}
